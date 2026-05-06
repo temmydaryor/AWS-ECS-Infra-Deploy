@@ -106,9 +106,9 @@ Resources:
         RouteTableId: !Ref PublicRouteTable
     EIP:
       Type: AWS::EC2::EIP
-        DependsOn: InternetGatewayAttachment    
-        Properties:
-          Domain: vpc
+      DependsOn: InternetGatewayAttachment    
+      Properties:
+        Domain: vpc
           Tags:
             - Key: Name
               Value: ECS-nat-eip
