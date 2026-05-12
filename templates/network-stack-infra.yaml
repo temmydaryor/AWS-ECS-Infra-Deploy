@@ -40,7 +40,7 @@ Resources:
       Tags:
         - Key: Name
           Value: public-subnet-1
-    PublicSubnet2:
+  PublicSubnet2:
     Type: AWS::EC2::Subnet
     Properties:
       VpcId: !Ref VPC
