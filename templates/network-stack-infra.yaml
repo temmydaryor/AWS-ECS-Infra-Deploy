@@ -106,8 +106,8 @@ Resources:
         RouteTableId: !Ref PublicRouteTable
     EIP:
       Type: AWS::EC2::EIP
-        DependsOn: InternetGatewayAttachment    
-        Properties:
+      DependsOn: GatewayAttachment
+      Properties:
           Domain: vpc
           Tags:
             - Key: Name
@@ -122,7 +122,7 @@ Resources:
             Value: ECS-nat-gateway
     PrivateRouteTable:
       Type: AWS::EC2::RouteTable            
-        Properties:
+      Properties:
             VpcId: !Ref VPC
             Tags:
             - Key: Name
@@ -135,7 +135,7 @@ Resources:
         NatGatewayId: !Ref NatGateway
     PrivateSubnet1RouteTableAssociation:
       Type: AWS::EC2::SubnetRouteTableAssociation   
-        Properties:
+      Properties:
             SubnetId: !Ref PrivateSubnet1
             RouteTableId: !Ref PrivateRouteTable
     PrivateSubnet2RouteTableAssociation:
