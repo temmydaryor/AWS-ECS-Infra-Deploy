@@ -123,12 +123,12 @@ Resources:
     PrivateRouteTable:
       Type: AWS::EC2::RouteTable            
       Properties:
-            VpcId: !Ref VPC
-            Tags:
-            - Key: Name
-                Value: ECS-private-rt
-    privateRoute:
-      Type: AWS::EC2::Route 
+        VpcId: !Ref VPC
+        Tags:
+          - Key: Name
+            Value: ECS-private-rt
+    PrivateRoute:
+      Type: AWS::EC2::Route
       Properties:
         RouteTableId: !Ref PrivateRouteTable
         DestinationCidrBlock: 0.0.0.0/0
