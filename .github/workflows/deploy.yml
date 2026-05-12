@@ -2,7 +2,7 @@ name: Deploy Network and ECS Stack
 on:
   push:
     branches:
-      - main
+      - master
 jobs:
   deploy:   
     runs-on: ubuntu-latest
